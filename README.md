@@ -1,6 +1,6 @@
-# SignalPilot
+# Flow Investor
 
-A clean stock signal MVP with a premium pricing section and CSV export flow.
+A clean, minimal stock signal MVP with a premium pricing section and CSV export flow.
 
 ## What it includes
 - Minimal stock analyzer UI
@@ -8,7 +8,13 @@ A clean stock signal MVP with a premium pricing section and CSV export flow.
 - Fast watchlist selection
 - CSV download button
 - Premium subscription CTA
-- Pricing section for your product
+- Pricing section with three tiers
+- AI-powered signal analysis
+
+## Product name
+**Flow Investor**
+- Tagline: "AI stock signals for smarter investing"
+- A premium, minimal dashboard for stock analysis
 
 ## Important note
 This is a prototype and not financial advice. It is designed as a launch-ready MVP for a product you can customize and grow.
@@ -26,7 +32,7 @@ Then open: http://localhost:8000
 1. Push this repo to GitHub
 2. Go to the repository settings
 3. Open Pages
-4. Choose the main or develop branch
+4. Choose the develop or main branch
 5. Select the root folder
 6. Save
 
@@ -41,8 +47,10 @@ This project includes a payment button placeholder:
 Example:
 
 ```js
-window.PAYMENT_URL = "https://buy.stripe.com/your_real_stripe_link";
+window.PAYMENT_URL = "https://buy.stripe.com/test_your_real_stripe_link";
 ```
 
+Once you create a Stripe account and a payment link, paste it here and your users can subscribe.
+
 ## Real product idea
-This is the foundation for a simple subscription-based stock signal tool. You can grow it with actual data providers, usage limits, subscriptions, and better AI signal logic.
+This is the foundation for a simple subscription-based stock signal tool. You can grow it with actual data providers, usage limits, real AI analysis, and better signal logic.
