@@ -6,7 +6,7 @@
     <title>SignalPilot | AI Stock Signals</title>
     <meta
       name="description"
-      content="Simple AI stock analysis dashboard for watchlists and trade signals."
+      content="Simple AI stock analysis dashboard with premium signal plans and export tools."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,14 +27,48 @@
           </div>
         </div>
 
-        <button class="nav-btn" id="downloadBtn" type="button">Download</button>
+        <div class="header-actions">
+          <button class="nav-btn" id="downloadBtn" type="button">Download</button>
+          <button class="primary-btn premium-btn" id="premiumBtn" type="button">Get Premium</button>
+        </div>
       </header>
 
-      <main class="app-grid">
-        <section class="panel left-panel">
+      <main class="hero">
+        <section class="panel intro-panel">
+          <div class="panel-head">
+            <span class="eyebrow">Launch-ready product</span>
+            <h1>Simple AI stock signals for smart investors.</h1>
+          </div>
+
+          <p class="intro-copy">
+            Analyze companies, compare signal strength, export your results, and upgrade to premium access.
+          </p>
+
+          <div class="cta-row">
+            <button class="primary-btn large" id="ctaPrimary" type="button">Start analyzing</button>
+            <button class="secondary-btn" id="pricingBtn" type="button">See pricing</button>
+          </div>
+
+          <div class="mini-stats">
+            <div class="mini-card green">
+              <span>Signals</span>
+              <strong>Live</strong>
+            </div>
+            <div class="mini-card amber">
+              <span>Pricing</span>
+              <strong>$29/mo</strong>
+            </div>
+            <div class="mini-card blue">
+              <span>Export</span>
+              <strong>CSV</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel analyzer-panel" id="analyzerSection">
           <div class="panel-head">
             <span class="eyebrow">Market scan</span>
-            <h1>Stock analyzer</h1>
+            <h2 id="resultTitle">AAPL overview</h2>
           </div>
 
           <form id="stockForm" class="stock-form">
@@ -58,28 +92,6 @@
             <button type="button" class="chip" data-symbol="NVDA">NVDA</button>
             <button type="button" class="chip" data-symbol="AMZN">AMZN</button>
             <button type="button" class="chip" data-symbol="TSLA">TSLA</button>
-          </div>
-
-          <div class="mini-stats">
-            <div class="mini-card green">
-              <span>Strong setups</span>
-              <strong id="strongSetups">12</strong>
-            </div>
-            <div class="mini-card amber">
-              <span>Watchlist</span>
-              <strong id="watchlistCount">8</strong>
-            </div>
-            <div class="mini-card blue">
-              <span>Risk mood</span>
-              <strong id="riskMood">Moderate</strong>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel right-panel">
-          <div class="panel-head">
-            <span class="eyebrow">Signal</span>
-            <h2 id="resultTitle">AAPL overview</h2>
           </div>
 
           <div class="signal-box" id="signalBox">
@@ -106,166 +118,56 @@
           </div>
 
           <div class="summary-box" id="summaryBox">
-            Trend is constructive, momentum remains above its short-term average, and catalysts
-            are improving. Risk is controlled with a defined stop and flexible exit plan.
+            Trend is constructive, momentum remains above its short-term average, and catalysts are improving.
           </div>
         </section>
       </main>
+
+      <section class="pricing" id="pricingSection">
+        <div class="pricing-header">
+          <span class="eyebrow">Simple pricing</span>
+          <h3>Choose your plan</h3>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">$0</div>
+            <ul>
+              <li>1 stock scan per day</li>
+              <li>Basic summary</li>
+              <li>CSV export</li>
+            </ul>
+            <button class="secondary-btn full" type="button">Try free</button>
+          </article>
+
+          <article class="pricing-card featured">
+            <div class="plan-badge">Most popular</div>
+            <div class="plan-name">Premium</div>
+            <div class="plan-price">$29<span>/month</span></div>
+            <ul>
+              <li>Unlimited stock scans</li>
+              <li>AI summary layer</li>
+              <li>Priority insights</li>
+            </ul>
+            <button class="primary-btn full premium-btn" type="button">Get Premium</button>
+          </article>
+
+          <article class="pricing-card">
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">$79<span>/month</span></div>
+            <ul>
+              <li>Advanced alerts</li>
+              <li>Watchlist tools</li>
+              <li>Private dashboard</li>
+            </ul>
+            <button class="secondary-btn full" type="button">Contact sales</button>
+          </article>
+        </div>
+      </section>
     </div>
 
+    <script src="config.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

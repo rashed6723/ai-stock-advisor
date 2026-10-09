@@ -4,55 +4,59 @@
 
 :root {
   --bg: #07130d;
-  --bg-soft: #0e1d18;
-  --panel: rgba(15, 27, 22, 0.92);
+  --bg-soft: #0d1a15;
+  --panel: rgba(14, 26, 20, 0.9);
   --panel-strong: #13261f;
-  --border: rgba(118, 170, 148, 0.2);
+  --border: rgba(133, 163, 151, 0.2);
   --text: #edf8f2;
-  --muted: #aabeb3;
-  --green: #6fe2a1;
+  --muted: #a6b9b0;
+  --green: #77e8a7;
   --green-strong: #3bc980;
-  --green-soft: rgba(86, 214, 141, 0.12);
-  --blue: #7db8ff;
-  --amber: #f7d57a;
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  --green-soft: rgba(119, 232, 167, 0.12);
+  --blue: #8abaff;
+  --amber: #f4d277;
+  --shadow: 0 20px 48px rgba(0, 0, 0, 0.25);
+  --danger: #ff8f7d;
 }
 
-html, body {
-  margin: 0;
-  min-height: 100%;
-  font-family: "Inter", sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(83, 176, 123, 0.18), transparent 28%),
-    linear-gradient(160deg, var(--bg) 0%, #091910 100%);
-  color: var(--text);
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(59, 201, 128, 0.15), transparent 25%),
+    linear-gradient(160deg, var(--bg) 0%, #091910 100%);
+  color: var(--text);
 }
 
 button, input {
   font: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 .page-shell {
-  width: min(1100px, 100%);
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
 }
 
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  gap: 20px;
   padding: 14px 18px;
   border: 1px solid var(--border);
   border-radius: 18px;
-  background: rgba(10, 20, 17, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(9, 21, 17, 0.8);
+  backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
 }
 
@@ -68,59 +72,79 @@ button, input {
   display: grid;
   place-items: center;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--green) 0%, #12a868 100%);
+  background: linear-gradient(135deg, var(--green) 0%, #14b870 100%);
   color: #062d1e;
   font-weight: 800;
 }
 
 .brand-name {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   font-weight: 700;
 }
 
 .brand-sub {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: var(--muted);
+}
+
+.header-actions,
+.cta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .nav-btn,
 .primary-btn,
+.secondary-btn,
 .chip {
-  transition: transform 0.18s ease, opacity 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .nav-btn,
-.primary-btn {
-  border: none;
+.secondary-btn,
+.chip {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
   border-radius: 12px;
-  cursor: pointer;
 }
 
-.nav-btn {
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text);
-  border: 1px solid var(--border);
+.nav-btn,
+.secondary-btn {
   padding: 10px 18px;
 }
 
 .primary-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
   background: linear-gradient(135deg, var(--green) 0%, var(--green-strong) 100%);
   color: #062d1e;
   font-weight: 700;
-  padding: 12px 18px;
-  min-width: 120px;
+}
+
+.primary-btn.large {
+  padding: 14px 22px;
+}
+
+.full {
+  width: 100%;
 }
 
 .nav-btn:hover,
 .primary-btn:hover,
+.secondary-btn:hover,
 .chip:hover {
   transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
 }
 
-.app-grid {
+.hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.15fr;
   gap: 24px;
+  margin-top: 24px;
 }
 
 .panel {
@@ -131,12 +155,14 @@ button, input {
   box-shadow: var(--shadow);
 }
 
-.panel-head {
-  margin-bottom: 20px;
+.intro-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .eyebrow {
-  display: inline-block;
+  display: block;
   margin-bottom: 8px;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
@@ -144,75 +170,35 @@ button, input {
   color: var(--green);
 }
 
-h1, h2 {
+h1, h2, h3 {
   margin: 0;
-  font-size: clamp(1.8rem, 2vw, 2.6rem);
-  line-height: 1.1;
+  line-height: 1.12;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
 }
 
 h2 {
-  font-size: clamp(1.5rem, 2vw, 2.3rem);
+  font-size: clamp(1.6rem, 2vw, 2.3rem);
 }
 
-.stock-form {
-  margin-top: 14px;
+h3 {
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
 }
 
-.stock-form label {
-  display: block;
-  margin-bottom: 10px;
+.intro-copy {
+  margin: 18px 0 22px;
   color: var(--muted);
-}
-
-.input-row {
-  display: flex;
-  gap: 12px;
-}
-
-.input-row input {
-  flex: 1;
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text);
-  padding: 14px 16px;
-  font-size: 1rem;
-  outline: none;
-}
-
-.input-row input:focus {
-  border-color: rgba(111, 226, 161, 0.7);
-  box-shadow: 0 0 0 3px rgba(111, 226, 161, 0.12);
-}
-
-.quick-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
-}
-
-.chip {
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 9px 14px;
-  cursor: pointer;
-}
-
-.chip.active {
-  background: var(--green-soft);
-  border-color: rgba(111, 226, 161, 0.5);
-  color: var(--green);
+  line-height: 1.7;
+  max-width: 560px;
 }
 
 .mini-stats {
-  margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+  margin-top: 22px;
 }
 
 .mini-card {
@@ -245,8 +231,60 @@ h2 {
   color: var(--blue);
 }
 
+.stock-form {
+  margin-top: 8px;
+}
+
+.stock-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+.input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.input-row input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 14px 16px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-row input:focus {
+  border-color: rgba(119, 232, 167, 0.7);
+  box-shadow: 0 0 0 3px rgba(119, 232, 167, 0.12);
+}
+
+.quick-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: var(--green-soft);
+  border-color: rgba(119, 232, 167, 0.45);
+  color: var(--green);
+}
+
 .signal-box {
-  background: rgba(155, 255, 196, 0.03);
+  margin-top: 22px;
+  background: rgba(119, 232, 167, 0.03);
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 18px;
@@ -270,7 +308,7 @@ h2 {
 }
 
 .signal-row strong {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 #signalText {
@@ -279,26 +317,95 @@ h2 {
 
 .summary-box {
   margin-top: 22px;
+  border: 1px solid var(--border);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border);
-  padding: 18px;
-  line-height: 1.7;
   color: var(--muted);
+  line-height: 1.7;
+  padding: 18px;
 }
 
-@media (max-width: 760px) {
-  .app-grid {
+.pricing {
+  margin-top: 28px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(11, 20, 18, 0.8);
+  box-shadow: var(--shadow);
+}
+
+.pricing-header {
+  margin-bottom: 20px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.pricing-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.pricing-card.featured {
+  background: rgba(119, 232, 167, 0.05);
+  border-color: rgba(119, 232, 167, 0.35);
+}
+
+.plan-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.plan-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.plan-price {
+  margin: 16px 0;
+  font-size: clamp(2rem, 2vw, 2.5rem);
+  font-weight: 800;
+}
+
+.plan-price span {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .pricing-grid {
     grid-template-columns: 1fr;
   }
 
   .topbar {
     flex-wrap: wrap;
-    gap: 14px;
   }
 
-  .input-row {
+  .input-row,
+  .cta-row,
+  .header-actions {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .mini-stats {
