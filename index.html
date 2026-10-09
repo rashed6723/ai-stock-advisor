@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignalPilot | AI Stock Signals</title>
+    <meta
+      name="description"
+      content="Simple AI stock analysis dashboard for watchlists and trade signals."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">SP</div>
+          <div>
+            <div class="brand-name">SignalPilot</div>
+            <div class="brand-sub">AI stock signal dashboard</div>
+          </div>
+        </div>
+
+        <button class="nav-btn" id="downloadBtn" type="button">Download</button>
+      </header>
+
+      <main class="app-grid">
+        <section class="panel left-panel">
+          <div class="panel-head">
+            <span class="eyebrow">Market scan</span>
+            <h1>Stock analyzer</h1>
+          </div>
+
+          <form id="stockForm" class="stock-form">
+            <label for="tickerInput">Ticker symbol</label>
+            <div class="input-row">
+              <input
+                id="tickerInput"
+                name="ticker"
+                type="text"
+                maxlength="10"
+                placeholder="AAPL"
+                autocomplete="off"
+              />
+              <button type="submit" class="primary-btn">Analyze</button>
+            </div>
+          </form>
+
+          <div class="quick-list" id="quickList">
+            <button type="button" class="chip active" data-symbol="AAPL">AAPL</button>
+            <button type="button" class="chip" data-symbol="MSFT">MSFT</button>
+            <button type="button" class="chip" data-symbol="NVDA">NVDA</button>
+            <button type="button" class="chip" data-symbol="AMZN">AMZN</button>
+            <button type="button" class="chip" data-symbol="TSLA">TSLA</button>
+          </div>
+
+          <div class="mini-stats">
+            <div class="mini-card green">
+              <span>Strong setups</span>
+              <strong id="strongSetups">12</strong>
+            </div>
+            <div class="mini-card amber">
+              <span>Watchlist</span>
+              <strong id="watchlistCount">8</strong>
+            </div>
+            <div class="mini-card blue">
+              <span>Risk mood</span>
+              <strong id="riskMood">Moderate</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel right-panel">
+          <div class="panel-head">
+            <span class="eyebrow">Signal</span>
+            <h2 id="resultTitle">AAPL overview</h2>
+          </div>
+
+          <div class="signal-box" id="signalBox">
+            <div class="signal-row">
+              <span>Signal</span>
+              <strong id="signalText">Buy</strong>
+            </div>
+            <div class="signal-row">
+              <span>Confidence</span>
+              <strong id="confidenceText">82%</strong>
+            </div>
+            <div class="signal-row">
+              <span>Entry</span>
+              <strong id="entryText">$218.40</strong>
+            </div>
+            <div class="signal-row">
+              <span>Stop</span>
+              <strong id="stopText">$208.10</strong>
+            </div>
+            <div class="signal-row">
+              <span>Target</span>
+              <strong id="targetText">$234.80</strong>
+            </div>
+          </div>
+
+          <div class="summary-box" id="summaryBox">
+            Trend is constructive, momentum remains above its short-term average, and catalysts
+            are improving. Risk is controlled with a defined stop and flexible exit plan.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
